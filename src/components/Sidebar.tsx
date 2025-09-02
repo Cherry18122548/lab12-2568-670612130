@@ -44,7 +44,6 @@ export default function Sidebar({
             />
           </Indicator>
 
-          {/* ข้อความบรรทัดเดียว */}
           <Text size="sm" fw={500} style={{ whiteSpace: "nowrap" }}>
             User : {userName}{userType ? ` : ${userType}` : ""}
           </Text>
