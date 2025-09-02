@@ -32,7 +32,7 @@ export default function HomePage() {
     { id: "3", title: "Deploy app", description: "Push project to GitHub Pages", isDone: false, dueDate: new Date(), doneAt: null },
   ]);
 
-  const { colorScheme, setColorScheme } = useMantineColorScheme(); // 👈 ใช้สลับธีม
+  const { colorScheme } = useMantineColorScheme(); // 👈 ใช้สลับธีม
 
   const lorem = new LoremIpsum({
     sentencesPerParagraph: { max: 8, min: 4 },

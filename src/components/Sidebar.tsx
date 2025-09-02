@@ -8,44 +8,51 @@ import {
   Text,
   Group,
 } from "@mantine/core";
-
-interface SidebarComponentProps  {
+interface SidebarComponentProps {
   userName: string;
-  avatarSrc: string;       
-  userType?: string;       
+  type?: "admin" | "student";
 }
-
-export default function Sidebar({
-  userName,
-  avatarSrc,
-  userType = "Admin",
-}: SidebarComponentProps) {
+//export type { SidebarProps };
+export default function Sidebar({ userName, type }: SidebarComponentProps) {
   return (
     <Stack
       align="stretch"
       justify="space-between"
       gap="md"
-      h="100vh"
+      style={{ height: "100%" }}
     >
-      {/* Menu */}
+      {/* Menu / เมนู*/}
       <Box>
-        <NavLink label="Home"  color="cyan" component={RouterNavLink} to="/" />
-        <NavLink label="About" color="cyan" component={RouterNavLink} to="/about" />
+        <NavLink
+          color="cyan"
+          label="Home"
+          component={RouterNavLink}
+          to="/"
+          active
+        />
+        <NavLink
+          color="cyan"
+          label="About"
+          component={RouterNavLink}
+          to="/about"
+        />
+        {/* ตัวอย่าง ใช้ Navlink กับ  components อื่นๆ ของ mantine */}
+        {/* <Text component={RouterNavLink} to="/">
+          Test
+        </Text> */}
       </Box>
-
-      {/* ผู้ใช้งาน (ก้น Sidebar) */}
-      <Box px="md" py={8} style={{ borderTop: "1px solid var(--mantine-color-gray-3)" }}>
-        <Group gap="sm" align="center" wrap="nowrap">
-           <Indicator inline size={16} offset={7} position="bottom-end" color="red" withBorder>
-            <Avatar
-            size="lg"
-            radius="xl"
-            src="12.jpg"
-            />
-          </Indicator>
-
-          <Text size="sm" fw={500} style={{ whiteSpace: "nowrap" }}>
-            User : {userName}{userType ? ` : ${userType}` : ""}
+      {/* แสดงผู้ใช้งาน */}
+      <Box p={10}>
+        <Group gap = "xs">
+          <Indicator inline size={16} offset={7} position="bottom-end" color="red" withBorder>
+          <Avatar
+          size="lg"
+          radius="xl"
+          src="12.jpg"
+      />
+    </Indicator>
+          <Text>
+            User: {userName} : {type}
           </Text>
         </Group>
       </Box>
