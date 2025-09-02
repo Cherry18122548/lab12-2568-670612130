@@ -6,10 +6,10 @@ import "@mantine/core/styles.css";
 import { MantineProvider, createTheme, virtualColor } from "@mantine/core";
 
 const theme = createTheme({
-  fontFamily: "Open Sans, sans-serif",
+  fontFamily: "Roboto, sans-serif",
   colors: {
     chanadda: virtualColor({
-      name: "chanadda",
+      name: "Woranat Thammawit",
       dark: "pink",
       light: "cyan",
     }),

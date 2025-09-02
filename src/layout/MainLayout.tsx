@@ -4,10 +4,15 @@ import HeaderComponent from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import FooterComponent from "../components/Footer";
 import { useDisclosure } from "@mantine/hooks";
+import "@mantine/core/styles.css";
+
 export default function MainLayout() {
   const [opened, { toggle }] = useDisclosure();
-  //opened: เป็น boolean (true/false)
-  //toggle(): สลับค่า opened (true → false → true)
+
+  
+  const userDisplayName = "Woranat";  
+  const avatarSrc = "/Woranat.jpg";    
+
   return (
     <AppShell
       padding="md"
@@ -20,14 +25,15 @@ export default function MainLayout() {
       </AppShell.Header>
 
       <AppShell.Navbar>
-        <Sidebar />
+        {/* ✅ ส่ง props ให้ Sidebar */}
+        <Sidebar userName={userDisplayName} avatarSrc={avatarSrc} />
       </AppShell.Navbar>
 
       <AppShell.Footer>
         <FooterComponent
           year="2025"
-          fullName="chanadda"
-          studentId="670612039"
+          fullName="Woranat"
+          studentId="670612130"
         />
       </AppShell.Footer>
 
